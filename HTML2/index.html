@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styly.css">
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>Jméno</th>
+            <th>Příjmení</th>
+            <th>Pohlaví</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Jan</td>
+            <td>Novák</td>
+            <td>Muž</td>
+        </tr>
+        <tr>
+            <td>Alena</td>
+            <td>Malá</td>
+            <td>Žena</td>
+        </tr>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                Účastníci soutěže
+            </td>
+        </tr>
+    </tfoot>
+    </table>
+    <form action="data.html" method="get">
+        <label for="Jméno">Vaše Jméno: </label>
+        <input id="Jméno" type="text" name="Jméno" required>
+        <br>
+        <label for="heslo">Vaše heslo: </label>
+        <input id="heslo" type="password" name="heslo" required>
+        <br>
+        <label for="věk">Váš věk: </label>
+        <input id="věk" type="number" name="věk" required min="6" max="150" step="2">
+        <br> 
+        <label for="student">student</label>
+        <input id="student" type="checkbox" name="student" value="True">
+        <br>
+        <
+        <br>
+        <input type="submit" value="Zaregistrovat">
+    </form>
+</body>
+</html>
