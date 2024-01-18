@@ -1,17 +1,20 @@
-function vytvoritTabulku() {
-    var pocetRadku = document.getElementById("pocet-radku").value;
-    var pocetSloupcu = document.getElementById("pocet-sloupcu").value;
-    var tabulka = "<table border='1'>";
+let platno = document.getElementById("platno");
+let kontext = platno.getContext("2d");
+let stredKruhuX = 100;
+let stredKruhuY = 100;
 
-    for (var i = 0; i < pocetRadku; i++) {
-        tabulka += "<tr>";
-        for (var j = 0; j < pocetSloupcu; j++) {
-                        tabulka += "<td>" + (i * pocetSloupcu + j + 1) + "</td>";
-        }
-    tabulka += "</tr>";
-    }
-
-tabulka += "</table>";
-document.body.insertAdjacentHTML("beforeend", tabulka);
+platno.onmousemove = function(event){
+    stredKruhuX = event.clientX;
+    stredKruhuY = event.clientY;
 }
 
+function nakresli(){
+    kontext.clearRect(0, 0, platno.width, platno.height);
+    kontext.beginPath();
+    kontext.arc(stredKruhuX,stredKruhuY, 50, 0, 2 * Math.PI);
+    kontext.fill();
+    kontext.fillRect(200,200,100,100);
+    requestAnimationFrame(nakresli);
+}
+
+nakresli();
